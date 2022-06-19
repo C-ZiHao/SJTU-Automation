@@ -1,0 +1,11 @@
+
+clear;clc;
+
+% load ºÏ≤‚±Í«©
+load('data/label2.mat')
+% train('”–±Í«©data')  
+train('data/labeled_data.mat','data/label.mat','data/unlabeled_data.mat');
+final_output=test('data/unlabeled_data.mat');
+
+acc=length(find(final_output == unnamed))/length(final_output)*100;
+fprintf('!-------Finished ,Accuracy=%f--------!\n',acc);
